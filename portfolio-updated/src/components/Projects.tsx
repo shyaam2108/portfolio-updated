@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
-import Image from "next/image";
+// import Image from "next/image"; // Removed for standard React
 
 const projects = [
   {
@@ -62,7 +62,7 @@ export default function Projects() {
               <div className="w-full lg:w-1/2 relative group perspective-1000">
                 <div className="relative rounded-xl overflow-hidden shadow-2xl transition-transform duration-500 group-hover:rotate-x-2 group-hover:rotate-y-[-2deg] group-hover:scale-[1.02] border border-white/10 glass">
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
-                  <Image 
+                  <img 
                     src={project.image} 
                     alt={project.title} 
                     width={800} 

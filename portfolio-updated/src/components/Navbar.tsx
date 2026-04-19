@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Code2 } from "lucide-react";
-import Link from "next/link";
+// import Link from "next/link"; // Removed for standard React
 
 const navLinks = [
   { name: "About", href: "#about" },
@@ -31,23 +31,23 @@ export default function Navbar() {
         }`}
     >
       <div className="container mx-auto px-6 max-w-6xl flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 group">
+        <a href="/" className="flex items-center gap-2 group">
           <Code2 className="text-purple-500 group-hover:text-pink-500 transition-colors" size={28} />
           <span className="text-xl font-bold tracking-wider text-white">
             shyaam
           </span>
-        </Link>
+        </a>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <Link
+            <a
               key={link.name}
               href={link.href}
               className="text-gray-300 hover:text-white transition-colors text-sm font-medium tracking-wide"
             >
               {link.name}
-            </Link>
+            </a>
           ))}
           <a
             href="#contact"
@@ -76,14 +76,14 @@ export default function Navbar() {
             className="absolute top-full left-0 right-0 glass-card flex flex-col items-center py-6 gap-6 md:hidden border-t-0"
           >
             {navLinks.map((link) => (
-              <Link
+              <a
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="text-gray-300 hover:text-white text-lg font-medium"
               >
                 {link.name}
-              </Link>
+              </a>
             ))}
           </motion.nav>
         )}
